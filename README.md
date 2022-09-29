@@ -1,5 +1,5 @@
 # L0Smoothing
-An python implementation of L0 smoothing
+A python implementation of L0 smoothing
 
 <img src="https://github.com/Computing-Art/L0Smoothing/blob/main/pflower.jpg" width="200"> <img src="https://github.com/Computing-Art/L0Smoothing/blob/main/pflower_L0Smoothing.jpg" width="200">
 
