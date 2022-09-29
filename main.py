@@ -26,7 +26,7 @@ def L0Smoothing(Im, lambd = 2e-2, kappa = 2.0):
 	sizeI2D = np.array([N, M])
 	otfFx = psf2otf(fx, sizeI2D)
 	otfFy = psf2otf(fy, sizeI2D)
-	Normin1 = np.fft.fft2(S.T).T ##
+	Normin1 = np.fft.fft2(S.T).T
 	Denormin2 = np.abs(otfFx) ** 2 + np.abs(otfFy) ** 2
 	if D > 1:
 		D2 = np.zeros((N, M, D), dtype=np.double)
@@ -36,6 +36,7 @@ def L0Smoothing(Im, lambd = 2e-2, kappa = 2.0):
 	beta = lambd * 2
 	while beta < betamax:
 		Denormin = 1 + beta * Denormin2
+		# Referenced from L-Dreams's blog
 		# h-v subproblem
 		h1 = np.diff(S, 1, 1)
 		h2 = np.reshape(S[:, 0], (N, 1, 3)) - np.reshape(S[:, -1], (N, 1, 3))
